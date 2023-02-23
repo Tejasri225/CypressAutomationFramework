@@ -1,4 +1,4 @@
-describe("Test contact us form via automatio-teststore", () =>{
+describe("Test contact us form via automation-teststore", () =>{
     it("Should be able to submit a successful submission via contact us form", () => {
 
    cy.visit('https://automationteststore.com/');
