@@ -2,7 +2,7 @@ import AutoStore_Homepage_PO from '../../support/pageObjectModel/automation_test
 import AutoStore_HairCare_PO from '../../support/pageObjectModel/automation_test_store/AutoStore_HairCare_PO'
 /// <reference types="cypress" />
 
-describe("Add multiple items to basket", () => {
+describe("Add multiple items to the basket", () => {
   const autoStore_Homepage_PO = new AutoStore_Homepage_PO();
   const autoStore_HairCare_PO = new AutoStore_HairCare_PO();
 
