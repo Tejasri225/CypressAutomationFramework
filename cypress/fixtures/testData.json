@@ -1,0 +1,26 @@
+[
+  {
+  "status":"No",
+  "name": "Using fixtures to represent data",
+  "email": "joe_blogs@webdriveruni.com",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "first_name": "Joe",
+  "last_name": "blogs"
+},
+{
+  "status":"Yes",
+  "name": "Using fixtures to represent data",
+  "email": "jk_1997@webdriveruni.com",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "first_name": "Jungkook",
+  "last_name": "Jeon"
+},
+{
+  "status":"Yes",
+  "name": "Using fixtures to represent data",
+  "email": "v_1995@webdriveruni.com",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "first_name": "Taehyung",
+  "last_name": "Kim"
+}
+]
