@@ -68,6 +68,43 @@ Cypress.Commands.add("webdriverUni_ContactForm_Submission", (firstName, lastName
         Cypress.Commands.add('checkTextContent', (selector, text) => {
             cy.get(selector).should('contain', text);
         });
+       //Reusable method for drag and drop
+        Cypress.Commands.add('dragAndDrop',  (subject, target) => {
+            cy.get(subject).trigger('mousedown', { which: 1 });
+            cy.get(target).trigger('mousemove').trigger('mouseup', { force: true });
+          });
+
+          //Reusable method for double click  
+          Cypress.Commands.add('doubleClick', (selector) => {  
+            cy.get(selector).dblclick();  
+          });
+
+        //Reusable method for Autosuggestion list
+        Cypress.Commands.add('autoSuggestTextfield', (selector, value,suggestedlist_sel,inp_txt) => {
+          cy.get(selector).type(value)
+          cy.get(suggestedlist_sel).each(($el,index,$list) => {    
+            const prod =$el.text();    
+            const productToSelect=inp_txt;   
+             if(prod===productToSelect){    
+          // $el.click();    
+          $el.trigger("click");  
+          } 
+       })   
+       });
+       //Reusble method for confirm alert
+       Cypress.Commands.add('confirmAlert', (selector, boolean) => { 
+         cy.get(selector).click() 
+         cy.on('window:confirm',(str)=>{  
+           return boolean;
+        }); 
+      }); 
+      //Reusble method for alert
+      Cypress.Commands.add('alert', (selector, text) => {  
+        cy.get(selector).click()  
+        cy.on('window:alert',(str)=>{expect(str).to.equal(text)   
+           return true;
+          })
+         });
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //

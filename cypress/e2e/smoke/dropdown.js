@@ -14,4 +14,8 @@ describe("Interact with dropdown lists via webdriveruni", () => {
         cy.get('#dropdowm-menu-2').select('maven').should('have.value', 'maven')
         cy.get('#dropdowm-menu-2').select('TestNG').contains('TestNG')
     });
+    it.only('Autosuggest', () => {   
+         cy.visit("/")    
+         cy.get('#autocomplete-textfield').invoke('removeAttr','target').click({force:true})   
+          cy.autoSuggestTextfield('#myInput','W','#myInputautocomplete-list>*','Walnuts')});
 })
